@@ -27,7 +27,9 @@ include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
 # gSLICr
-find_package(gSLICr REQUIRED)
+#find_package(gSLICr REQUIRED)
+#replacing with its directory location
+set(gSLICr_DIR /opt/gSLICR/build/)
 
 # Pangolin
 find_package(Pangolin 0.5 REQUIRED)
