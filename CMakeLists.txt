@@ -21,10 +21,29 @@ if (OPENMP_FOUND)
 endif()
 
 # boost
-find_package(Boost REQUIRED filesystem)
-message(STATUS "Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
-include_directories(${Boost_INCLUDE_DIRS})
-link_directories(${Boost_LIBRARY_DIRS})
+#find_package(Boost REQUIRED filesystem)
+#message(STATUS "Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
+#include_directories(${Boost_INCLUDE_DIRS})
+#link_directories(${Boost_LIBRARY_DIRS})
+SET (BOOST_ROOT "/opt/boost/boost_1_65_1")
+SET (BOOST_INCLUDEDIR "/opt/boost/boost-1.65.1/include")
+SET (BOOST_LIBRARYDIR "/opt/boost/boost-1.65.1/lib")
+
+SET (BOOST_MIN_VERSION "1.55.0")
+set (Boost_NO_BOOST_CMAKE ON)
+FIND_PACKAGE(Boost ${BOOST_MIN_VERSION} REQUIRED)
+if (NOT Boost_FOUND)
+  message(FATAL_ERROR "Fatal error: Boost (version >= 1.55) required.")
+else()
+  message(STATUS "Setting up BOOST")
+  message(STATUS " Includes - ${Boost_INCLUDE_DIRS}")
+  message(STATUS " Library  - ${Boost_LIBRARY_DIRS}")
+  include_directories(${Boost_INCLUDE_DIRS})
+  link_directories(${Boost_LIBRARY_DIRS})
+endif (NOT Boost_FOUND)
+
+
+
 
 # gSLICr
 #find_package(gSLICr REQUIRED)
