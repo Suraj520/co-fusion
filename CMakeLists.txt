@@ -59,7 +59,7 @@ endif (NOT Boost_FOUND)
 #find_package(gSLICr REQUIRED)
 #replacing with its directory location
 set(gSLICr_DIR /opt/gSLICR/build/)
-target_include_directories(cofusion PUBLIC "/usr/include/gSLICr_Lib" )
+target_include_directories(${PROJECT_NAME} PUBLIC "/usr/include/gSLICr_Lib" )
 
 # Pangolin
 find_package(Pangolin 0.5 REQUIRED)
