@@ -60,7 +60,7 @@ endif (NOT Boost_FOUND)
 #replacing with its directory location
 set(gSLICr_DIR /opt/gSLICr/build/)
 #target_include_directories(${PROJECT_NAME} PUBLIC "/opt/gSLICr/build/include" )
-#include_directories(${gSLICr_INCLUDE_DIRS})
+include_directories("/opt/gSLICr/build/include")
 
 # Pangolin
 find_package(Pangolin 0.5 REQUIRED)
