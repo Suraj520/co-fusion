@@ -58,8 +58,8 @@ endif (NOT Boost_FOUND)
 # gSLICr
 #find_package(gSLICr REQUIRED)
 #replacing with its directory location
-set(gSLICr_DIR /opt/gSLICR/build/)
-#target_include_directories(${PROJECT_NAME} PUBLIC "/usr/include/gSLICr_Lib" )
+set(gSLICr_DIR /opt/gSLICr/build/)
+target_include_directories(${PROJECT_NAME} PUBLIC "/opt/gSLICr/build/include" )
 #include_directories(${gSLICr_INCLUDE_DIRS})
 
 # Pangolin
