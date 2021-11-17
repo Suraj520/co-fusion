@@ -56,9 +56,9 @@ else()
 endif (NOT Boost_FOUND)
 
 # gSLICr
-find_package(gSLICr REQUIRED)
+#find_package(gSLICr REQUIRED)
 #replacing with its directory location
-#set(gSLICr_DIR /opt/gSLICR/build/)
+set(gSLICr_DIR /opt/gSLICR/build/)
 
 # Pangolin
 find_package(Pangolin 0.5 REQUIRED)
