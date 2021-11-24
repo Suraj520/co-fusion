@@ -58,7 +58,12 @@ endif()
 
 #find_package(densecrf REQUIRED)
 #replacing find_package with set for docker build convenience
-set(densecrf_DIR /opt/densecrf/build/)
+#set(densecrf_DIR /opt/densecrf/build/)
+
+set(densecrf_DIR /opt/densecrf/)
+include_directories(${densecrf_DIR}/include)
+link_directories(${densecrf_DIR}/build)
+
 set(cofusion_SHADER_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Shaders" CACHE PATH "Where the shaders live")
 
 message(STATUS "Directories: ")
