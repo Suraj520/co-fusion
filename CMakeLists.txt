@@ -64,7 +64,6 @@ link_directories(${gSLICr_DIR}/build)
 
 #target_include_directories(${PROJECT_NAME} PUBLIC "/usr/include/gSLICr_Lib" )
 
-include_directories("/usr/include/gSLICr_Lib")
 
 # Pangolin
 find_package(Pangolin 0.5 REQUIRED)
