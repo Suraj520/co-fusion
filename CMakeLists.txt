@@ -58,7 +58,7 @@ endif (NOT Boost_FOUND)
 # gSLICr
 #find_package(gSLICr REQUIRED)
 #replacing with its directory location
-set(gSLICr_DIR /opt/gSLICr/build/)
+set(gSLICr_DIR /opt/gSLICr/)
 include_directories(${gSLICr_DIR}/gSLICr_Lib)
 link_directories(${gSLICr_DIR}/build)
 
