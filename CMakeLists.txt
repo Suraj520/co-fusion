@@ -63,6 +63,7 @@ include_directories(${gSLICr_DIR}/gSLICr_Lib)
 link_directories(${gSLICr_DIR}/build)
 
 #target_include_directories(${PROJECT_NAME} PUBLIC "/usr/include/gSLICr_Lib" )
+link_libraries(stdc++fs)
 
 
 # Pangolin
