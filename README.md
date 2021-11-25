@@ -1,4 +1,5 @@
 # Co-Fusion
+(Significantly modified for Docker build)
 
 This repository contains Co-Fusion, a dense SLAM system that takes a live stream of RGB-D images as input and segments the scene into different objects.
 
