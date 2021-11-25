@@ -60,9 +60,18 @@ endif()
 #replacing find_package with set for docker build convenience
 #set(densecrf_DIR /opt/densecrf/build/)
 
-set(densecrf_DIR /opt/densecrf/)
-include_directories(${densecrf_DIR}/include)
-link_directories(${densecrf_DIR}/build)
+
+#DenseCRF
+set(DENSECRF_DIR /opt/densecrf/)
+set(DENSECRF_LIBRARY_DIRS "${DENSECRF_DIR}/build/src/")
+set(DENSECRF_INCLUDE_DIRS "${DENSECRF_DIR}/include")
+set(DENSECRF_LIBRARIES densecrf)
+
+#Includes
+include_directories(${DENSECRF_INCLUDE_DIRS})
+link_directories(${DENSECRF_LIBRARY_DIRS})
+
+
 
 set(cofusion_SHADER_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Shaders" CACHE PATH "Where the shaders live")
 
@@ -136,7 +145,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 
 target_link_libraries(${PROJECT_NAME}
     gSLICr_lib
-    densecrf
+    ${DENSECRF_LIBRARIES}
     ${Pangolin_LIBRARIES}
     ${CUDA_LIBRARIES}
     ${SUITESPARSE_LIBRARIES}
